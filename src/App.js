@@ -28,7 +28,8 @@ class App extends Component {
   
   select1 = (e) => {
     const { currentScore, bestScore, selected } = this.state;
-    console.log("Selected: "+e.target.textContent);
+    console.log(e);
+    console.log("Selected: "+e.target.innerText);
     console.log("Score: "+currentScore);
     console.log(selected);
     let newScore;
@@ -89,60 +90,61 @@ class App extends Component {
       <p id="para">Your current Score: {currentScore}</p>
       <p>Your Best Score: {bestScore}</p>
       <div className="grid">
-        <div id="element" onClick={this.select1}>
-          <img src={nz}></img><br></br>
-          New Zealand 
+        <div id="element">
+          <div onClick={this.select1} className="name">New Zealand</div>
+          <img src={nz}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={ru}></img><br></br>
-          Russia
+        <div id="element">
+          <div onClick={this.select1} className="name">Finland</div>
+          <img src={fi}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={fr}></img><br></br>
-          France
+        <div id="element">
+          <div onClick={this.select1} className="name">Australia</div>
+          <img src={au}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={fi}></img><br></br>
-          Finland
+        <div id="element">
+          <div onClick={this.select1} className="name">Netherlands</div>
+          <img src={nl}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={no}></img><br></br>
-          Norway
+        <div id="element">
+          <div onClick={this.select1} className="name">Norway</div>
+          <img src={no}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={se}></img><br></br>
-          Sweden
+        <div id="element">
+          <div onClick={this.select1} className="name">Denmark</div>
+          <img src={dk}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={nl}></img><br></br>
-          Netherlands
+        <div id="element">
+          <div onClick={this.select1} className="name">Russia</div>
+          <img src={ru}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={dk}></img><br></br>
-          Denmark
+        <div id="element">
+          <div onClick={this.select1} className="name">Poland</div>
+          <img src={pl}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={pl}></img><br></br>
-          Poland
+        <div id="element">
+          <div onClick={this.select1} className="name">Indonesia</div>
+          <img src={id}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={is}></img><br></br>
-          Iceland
+        <div id="element">
+          <div onClick={this.select1} className="name">Sweden</div>
+          <img src={se}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={au}></img><br></br>
-          Australia
+        <div id="element">
+          <div onClick={this.select1} className="name">France</div>
+          <img src={fr}></img>
         </div>
-        <div id="element" onClick={this.select1}>
-        <img src={id}></img><br></br>
-          Indonesia
+        <div id="element">
+          <div onClick={this.select1} className="name">Iceland</div>
+          <img src={is}></img>
         </div>
+        
         
       </div>
       
 
-      <button onClick={this.handleChange}>add</button>
-      <Overview/>
+      
+      
       </div>
     );
   }

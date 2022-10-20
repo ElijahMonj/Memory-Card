@@ -6,23 +6,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: lightcoral;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#root{
+  display: flex;
+justify-content: center;
+}
 .grid{
+  
   display: grid;
-  grid-template-columns: 460px 460px 460px;
+  grid-template-columns: 360px 360px 360px 360px;
+  gap: 20px;
 }
 #element{
-  border-style: solid;
+  
   align-content: center;
   text-align: center;
+  
 }
 img{
-  width:450px;
+  width:350px;
+  
+}
+.name{
+  height: 253px;
+  position: absolute;
+  width: 360px;
+  
+  display: flex;
+  flex-direction: column-reverse;
+}
+.name:hover{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 

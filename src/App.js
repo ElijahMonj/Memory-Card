@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import Overview from "./components/Overview";
 import uniqid from "uniqid";
-
+import nz from "./images/nz.png";
+import is from "./images/is.png";
+import au from "./images/au.png";
+import fi from "./images/fi.png";
+import dk from "./images/dk.png";
+import fr from "./images/fr.png";
+import ru from "./images/ru.png";
+import id from "./images/id.png";
+import pl from "./images/pl.png";
+import no from "./images/no.png";
+import nl from "./images/nl.png";
+import se from "./images/se.png";
 class App extends Component {
  
   constructor() {
@@ -22,11 +33,12 @@ class App extends Component {
     console.log(selected);
     let newScore;
     let newSelected;
+    let newBestScore=bestScore;
     let bol=true;
     if(this.state.selected.length===0){
       newScore=currentScore+1;
       newSelected=selected.concat(e.target.textContent);
-     
+      
       console.log("Nice")
     }
    
@@ -36,7 +48,11 @@ class App extends Component {
           newSelected=[];
           bol=false;
           console.log("You failed")
+          if(bestScore<currentScore){
+            newBestScore=currentScore;
+          }
         }
+       
       }
 
     if (bol===true){
@@ -48,6 +64,7 @@ class App extends Component {
     console.log(bol)
     this.setState({
       currentScore: newScore,
+      bestScore: newBestScore,
       selected: newSelected,
     });
     
@@ -73,17 +90,59 @@ class App extends Component {
       <p>Your Best Score: {bestScore}</p>
       <div className="grid">
         <div id="element" onClick={this.select1}>
-        <div></div>
-        Ayano
+          <img src={nz}></img><br></br>
+          New Zealand 
         </div>
-        <div id="element" onClick={this.select1}>2</div>
-        <div id="element" onClick={this.select1}>3</div>
-        <div id="element" onClick={this.select1}>4</div>
+        <div id="element" onClick={this.select1}>
+        <img src={ru}></img><br></br>
+          Russia
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={fr}></img><br></br>
+          France
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={fi}></img><br></br>
+          Finland
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={no}></img><br></br>
+          Norway
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={se}></img><br></br>
+          Sweden
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={nl}></img><br></br>
+          Netherlands
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={dk}></img><br></br>
+          Denmark
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={pl}></img><br></br>
+          Poland
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={is}></img><br></br>
+          Iceland
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={au}></img><br></br>
+          Australia
+        </div>
+        <div id="element" onClick={this.select1}>
+        <img src={id}></img><br></br>
+          Indonesia
+        </div>
+        
       </div>
       
 
       <button onClick={this.handleChange}>add</button>
-       
+      <Overview/>
       </div>
     );
   }

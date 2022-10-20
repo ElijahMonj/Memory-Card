@@ -1,7 +1,7 @@
 import React from "react";
 
 const Overview = (props) => {
-  const { tasks } = props;
+  const { currentScore, bestScore, selected } = props;
 
 
 

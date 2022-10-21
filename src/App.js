@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component,useEffect,useState } from "react";
 import Overview from "./components/Overview";
 
 import nz from "./images/nz.png";
+import star from "./images/star.png";
 import is from "./images/is.png";
 import au from "./images/au.png";
 import fi from "./images/fi.png";
@@ -20,7 +21,7 @@ class App extends Component {
     super();
 
     this.state = {
-      isInitiated: false,
+      color: '',
       currentScore: 0,
       bestScore: 0,
       selected: [],
@@ -51,6 +52,7 @@ class App extends Component {
     let newSelected;
     let newBestScore=bestScore;
     let bol=true;
+    let putStar='';
     if(this.state.selected.length===0){
       newScore=currentScore+1;
       newSelected=selected.concat(e.target.textContent);
@@ -78,16 +80,18 @@ class App extends Component {
         console.log("Nice")
     }
     let newCountry = country
-    //.map(value => ({ value, sort: Math.random() }))
-    //.sort((a, b) => a.sort - b.sort)
-    //.map(({ value }) => value)
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
     console.log(bol)
     if(newScore==12){
       newScore=0;
       newBestScore=12;
+      putStar=star;
       newSelected=[];
     }
     this.setState({
+      color:putStar,
       currentScore: newScore,
       bestScore: newBestScore,
       selected: newSelected,
@@ -106,7 +110,7 @@ class App extends Component {
   
 
   render() {
-    const { currentScore, bestScore, country } = this.state;
+    const { currentScore, bestScore, country,color } = this.state;
 
     return (
       <div className="game">
@@ -114,7 +118,7 @@ class App extends Component {
       <div className="subheading">Select a country, but never select it again.</div>
       <div className="scores">
       <p id="para">Your current Score: {currentScore}</p>
-      <p>Your Best Score: {bestScore}</p>
+      <p>Your Best Score: {bestScore}<img src={color} className="star"></img></p>
       </div>
       
       <div className="grid">

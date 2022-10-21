@@ -77,6 +77,10 @@ footer{
   flex-direction:row;
   gap: 7px;
 }
+.star{
+  width: 15px;
+  margin-left: 5px;
+}
 .myName{
   font-weight: bold;
 }

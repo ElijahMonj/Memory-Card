@@ -5,23 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightcoral;
- 
+  background-color: #efe2ba;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#root{
-  display: flex;
-justify-content: center;
+.game{
+  margin-bottom: 70px;
+
 }
 .grid{
   
   display: grid;
-  grid-template-columns: 360px 360px 360px 360px;
-  gap: 20px;
+  grid-template-columns: 350px 350px 350px 350px;
+  
+  justify-content: center;
+  gap: 40px;
 }
 #element{
   
@@ -31,19 +33,60 @@ justify-content: center;
 }
 img{
   width:350px;
-  
 }
 .name{
   height: 253px;
   position: absolute;
-  width: 360px;
-  
+  width: 350px;
   display: flex;
   flex-direction: column-reverse;
 }
 .name:hover{
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #EAEAEA;
 }
-
+header{
+  text-align: center;
+  font-size: 50px;
+  background-color: #4056a1;
+  color: #d79922;
+  font-weight: bolder;
+}
+.subheading{
+  background-color: #4056a1;
+  text-align: center;
+  color: #c5cbe3;
+  padding: 10px;
+}
+.scores{
+  display: flex;
+  justify-content: center;
+  gap:450px
+}
+footer{
+  color: #c5cbe3;
+  background-color: #4056a1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  align-items: center;
+  flex-direction:row;
+  gap: 7px;
+}
+.myName{
+  font-weight: bold;
+}
+#github{
+  height: 25px;
+  width: 25px;
+  transition: transform .4s; 
+}
+#github:hover{
+  transform: scale(1.15);
+  cursor: pointer;
+}
 
